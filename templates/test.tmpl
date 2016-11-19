@@ -1,0 +1,7 @@
+Name: {{ name }}
+Docker Image: {{ dockerimage }}
+
+Dependencies:
+{% for dependency in dependencies -%}
+{{ dependency }}
+{% endfor %}
