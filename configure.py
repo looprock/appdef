@@ -24,4 +24,7 @@ cmd_parser.add_option("-b", "--batch", type="string", action="store", dest="batc
 # print appdef
 
 if cmd_options.batch:
-    x = getattr(batch, cmd_options.batch)(appdef)
+    try:
+        x = getattr(batch, cmd_options.batch)(appdef)
+    except AttributeError:
+        print "ERROR: batch method %s not found!" % cmd_options.batch
